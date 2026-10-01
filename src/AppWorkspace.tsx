@@ -203,11 +203,6 @@ function Preview({ app }: { app: App }) {
           </a>
         )}
       </div>
-      {app.previewUrl && (
-        <div className="browser-hint">
-          Daytona shows a one-time safety page for new preview links. Click "I Understand, Continue" to see the app.
-        </div>
-      )}
       {app.previewUrl ? (
         <iframe
           src={app.previewUrl}

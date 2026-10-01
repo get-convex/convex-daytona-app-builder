@@ -563,13 +563,6 @@ button:disabled {
   color: var(--text);
 }
 
-.browser-hint {
-  padding: 8px 14px;
-  font-size: 13px;
-  color: var(--muted);
-  border-bottom: 1px solid var(--border);
-}
-
 .browser iframe,
 .browser-empty {
   display: block;

@@ -32,6 +32,8 @@ npm run dev
 
 Open http://localhost:5173 and describe an app.
 
+On Daytona tiers below 3, each new preview link shows a warning page inside the iframe first. Click "I Understand, Continue" to get to your app. Tier 3 removes the warning page, see [Daytona's preview docs](https://www.daytona.io/docs/en/preview/#warning-page).
+
 ### The LLM: Convex AI Gateway
 
 The code is generated through the [Convex AI Gateway](https://docs.convex.dev/ai-gateway/setup), so there's no LLM API key to manage. It works on cloud deployments in a **paid** Convex team. The model is the `MODEL` constant at the top of `convex/builder.ts` (`anthropic/claude-sonnet-5`; swap in `anthropic/claude-haiku-4.5` for faster, cheaper builds).
@@ -111,8 +113,6 @@ The hosted demo is public and every build costs real Daytona and LLM money, so t
 - **Input caps**: prompts up to 500 characters and LLM output capped at 8,000 tokens.
 - **Short-lived sandboxes**: labelled `app: convex-daytona-app-builder`, paused after 10 idle minutes and deleted after 60.
 - **12 hour reset**: `crons.ts` runs `reset.resetDemo`, which deletes every sandbox the component knows about that isn't already gone and wipes the `apps` table. It's safe to run any time: `npx convex run reset:resetDemo`.
-
-Daytona shows a one-time safety page the first time a browser opens each preview link. Click "I Understand, Continue" inside the iframe. Daytona's [preview docs](https://www.daytona.io/docs/en/preview-and-authentication) cover how to turn it off for your organization.
 
 ## Links
 
