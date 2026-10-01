@@ -18,6 +18,15 @@
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
+/* Show code exactly as typed: no => to ⇒ ligatures. */
+code,
+pre,
+.mono,
+.terminal-body {
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
+
 body {
   margin: 0;
   background: var(--bg);
