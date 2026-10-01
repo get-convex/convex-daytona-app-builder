@@ -42,12 +42,15 @@ export default defineConfig({
   },
 })
 `,
+  // The margin reset stops the browser's default 8px body margin from framing
+  // the app in white. No colours: the generated app picks its own theme.
   'index.html': `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generated App</title>
+    <style>html,body{margin:0}</style>
   </head>
   <body>
     <div id="root"></div>
