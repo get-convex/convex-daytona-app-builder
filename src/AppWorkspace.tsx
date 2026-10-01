@@ -139,7 +139,8 @@ function TerminalBody({ install }: { install: Install | null | undefined }) {
           {install.status === 'running' && <span className="cursor" />}
         </>
       ) : (
-        <div className="log-dim">npm install starts once the code is written...</div>
+        // undefined means the query is still loading (e.g. just after a refresh), so show nothing yet.
+        install === null && <div className="log-dim">npm install starts once the code is written...</div>
       )}
     </div>
   )
