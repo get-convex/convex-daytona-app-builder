@@ -1,7 +1,7 @@
 /**
  * Fixed Vite + React scaffold written into every sandbox. The LLM only ever
- * generates src/App.jsx — keeping generations fast, cheap, and reliable while
- * Vite's file watcher gives us hot reload when follow-up edits rewrite it.
+ * generates src/App.jsx, which keeps generations fast, cheap and reliable,
+ * and Vite's file watcher hot-reloads the page when a follow-up edit rewrites it.
  */
 
 export const APP_DIR = '/home/daytona/app'
@@ -37,7 +37,7 @@ export default defineConfig({
     strictPort: true,
     // Vite rejects requests whose Host header isn't localhost (DNS-rebinding
     // protection). Daytona's preview proxy forwards the public preview domain
-    // as the Host, so allow it. Not CORS — a server-side Host allowlist.
+    // as the Host, so allow it. (Not CORS: a server-side Host allowlist.)
     allowedHosts: true,
   },
 })
@@ -70,8 +70,8 @@ createRoot(document.getElementById('root')).render(
 export const SYSTEM_PROMPT = `You generate a single React component file for a Vite + React 19 project.
 
 Rules:
-- Output ONLY the complete contents of src/App.jsx — no markdown fences, no explanations.
+- Output ONLY the complete contents of src/App.jsx. No markdown fences, no explanations.
 - Default-export a component named App.
-- Plain JavaScript + JSX (no TypeScript). Only react and react-dom are installed — import anything you use from 'react' (e.g. import { useState, useEffect } from 'react'); never import any other package.
+- Plain JavaScript + JSX (no TypeScript). Only react and react-dom are installed. Import anything you use from 'react' (e.g. import { useState, useEffect } from 'react'); never import any other package.
 - All styling must be inline style objects or a <style> tag rendered by the component. Make it polished and modern: real layout, spacing, a coherent color scheme.
 - The app must be fully self-contained and interactive where it makes sense (useState/useEffect are encouraged).`
