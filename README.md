@@ -36,7 +36,7 @@ On Daytona tiers below 3, each new preview link shows a warning page inside the 
 
 ### The LLM: Convex AI Gateway
 
-The code is generated through the [Convex AI Gateway](https://docs.convex.dev/ai-gateway/setup), so there's no LLM API key to manage. It works on cloud deployments in a **paid** Convex team. The model is the `MODEL` constant at the top of `convex/builder.ts` (`anthropic/claude-sonnet-5`; swap in `anthropic/claude-haiku-4.5` for faster, cheaper builds).
+The code is generated through the [Convex AI Gateway](https://docs.convex.dev/ai-gateway/setup), so there's no LLM API key to manage. It works on cloud deployments in a **paid** Convex team. The model is the `MODEL` constant at the top of `convex/builder.ts` (`anthropic/claude-sonnet-5`; swap in `anthropic/claude-haiku-4.5` for faster, cheaper builds). Reasoning is turned off in `generateCode`, so the code starts streaming straight away.
 
 On a free team, use OpenAI (or any AI SDK provider) instead. `npm install @ai-sdk/openai`, set `npx convex env set OPENAI_API_KEY sk-...`, then change two lines in `convex/builder.ts`:
 

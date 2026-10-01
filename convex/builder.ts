@@ -178,6 +178,9 @@ async function generateCode(
     system: SYSTEM_PROMPT,
     prompt,
     maxOutputTokens: MAX_OUTPUT_TOKENS,
+    // No extended thinking, so the code starts streaming straight away
+    // instead of after a long silent pause while the model reasons.
+    providerOptions: { convexGateway: { reasoning: { enabled: false } } },
     abortSignal,
     onError: ({ error }) => {
       streamError = error
